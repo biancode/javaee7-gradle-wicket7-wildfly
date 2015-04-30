@@ -1,0 +1,61 @@
+/*
+    Eclipse Settings
+
+    Gradle Website Info:
+    Generates files that are used by Eclipse IDE, thus making it possible to import the project into Eclipse.
+	
+     GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
+
+	http://bianco-royal.com/		
+ */
+apply plugin: 'eclipse'
+
+logger.info('Eclipse Plugin activated')
+
+eclipseProject {
+
+    def sep = System.getProperty('file.separator')
+    def eclipseSettingsFile = getProjectDir().toString() + sep + ".settings" + sep + "org.eclipse.core.resources.prefs"
+
+    logger.info("eclipseSettingsFile: ${eclipseSettingsFile}")
+
+    ext.dateiPfad = new File(eclipseSettingsFile)
+
+    ext.settingPfad = new File(ext.dateiPfad.getParent())
+    if (!ext.settingPfad.exists()) {
+        logger.info("settingPfad: ${ext.settingPfad} create")
+        ext.settingPfad.mkdirs()
+    }
+
+    ext.dateiPfad.withWriter {
+        it.println "eclipse.preferences.version=1"
+        it.println "encoding=" + project.encoding
+    }
+}
+
+
+eclipse {
+  // if you want parts of paths in resulting file to be replaced by variables (files):
+  // pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat')
+
+  classpath {
+    // you can tweak the classpath of the Eclipse project by adding extra configurations:
+    // plusConfigurations += [ configurations.provided ]
+
+    // you can also remove configurations from the classpath:
+    // minusConfigurations += [ configurations.someBoringConfig ]
+
+    // if you don't want some classpath entries 'exported' in Eclipse
+    // noExportConfigurations += [ configurations.provided ]
+
+    // if you want to append extra containers:
+    // containers 'someFriendlyContainer', 'andYetAnotherContainer'
+
+    // customizing the classes output directory:
+    // defaultOutputDir = file('build-eclipse')
+
+    //default settings for downloading sources and Javadoc:
+    downloadSources = true
+    downloadJavadoc = false
+  }
+}

@@ -1,0 +1,100 @@
+/* Basic CSS Formatter */
+/* line 3, ../../../sass/formatter.scss */
+.gbc-none-margin {
+  margin: 0;
+}
+
+/* line 7, ../../../sass/formatter.scss */
+.gbc-auto-margin {
+  margin: 0 auto;
+}
+
+/* line 11, ../../../sass/formatter.scss */
+.gbc-full-margin {
+  margin: 10px;
+}
+
+/* line 15, ../../../sass/formatter.scss */
+.gbc-top-margin {
+  margin: 0;
+  margin-top: 10px;
+}
+
+/* line 20, ../../../sass/formatter.scss */
+.gbc-topleft-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* line 26, ../../../sass/formatter.scss */
+.gbc-topright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* line 32, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 38, ../../../sass/formatter.scss */
+.gbc-topleftright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 46, ../../../sass/formatter.scss */
+.gbc-none-padding {
+  padding: 0;
+}
+
+/* line 50, ../../../sass/formatter.scss */
+.gbc-auto-padding {
+  padding: 0 auto;
+}
+
+/* line 54, ../../../sass/formatter.scss */
+.gbc-full-padding {
+  padding: 10px;
+}
+
+/* line 58, ../../../sass/formatter.scss */
+.gbc-top-padding {
+  padding: 0;
+  padding-top: 10px;
+}
+
+/* line 63, ../../../sass/formatter.scss */
+.gbc-topleft-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+/* line 69, ../../../sass/formatter.scss */
+.gbc-topright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+/* line 75, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 81, ../../../sass/formatter.scss */
+.gbc-topleftright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

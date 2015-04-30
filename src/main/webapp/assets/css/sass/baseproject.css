@@ -1,0 +1,98 @@
+/* special Project Settings in CSS - Designed on 1024x768 */
+/* line 3, ../../../sass/baseproject.scss */
+.programlogo, .programlogo-right, .programlogo-right-deploy {
+  position: absolute;
+  margin-top: -70px;
+  width: 146px;
+  height: 30px;
+  z-index: 9999;
+}
+
+/* line 11, ../../../sass/baseproject.scss */
+.programlogo-right {
+  margin-left: 724px;
+}
+@media (min-width: 300px) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 5px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 468px;
+  }
+}
+@media (min-width: 960px) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 660px;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 724px;
+  }
+}
+@media (min-width: 1136px) and (orientation: landscape) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 836px;
+  }
+}
+@media (min-width: 1334px) and (orientation: landscape) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-left: 1034px;
+  }
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 11, ../../../sass/baseproject.scss */
+  .programlogo-right {
+    margin-top: -140px;
+    margin-left: 1748px;
+  }
+}
+
+/* line 45, ../../../sass/baseproject.scss */
+.programlogo-right-deploy {
+  margin-left: 874px;
+}
+@media (min-width: 300px) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 5px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 618px;
+  }
+}
+@media (min-width: 960px) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 810px;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 874px;
+  }
+}
+@media (min-width: 1136px) and (orientation: landscape) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 986px;
+  }
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 45, ../../../sass/baseproject.scss */
+  .programlogo-right-deploy {
+    margin-left: 1898px;
+  }
+}

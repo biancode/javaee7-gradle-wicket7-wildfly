@@ -1,0 +1,16 @@
+/* special Project Settings in CSS - Designed on 1024x768 */
+/* line 4, ../../../sass/basemobileproject.scss */
+.programlogo, .programlogo-right, .programlogo-right-deploy {
+  position: absolute;
+  margin-top: -47px;
+  margin-left: 45px;
+  width: 146px;
+  height: 30px;
+  z-index: 9999;
+}
+
+/* line 13, ../../../sass/basemobileproject.scss */
+.programlogo-right, .programlogo-right-deploy {
+  margin-top: 13px;
+  margin-left: 470px;
+}

@@ -1,0 +1,14 @@
+
+
+.breadcrumb {
+  font-size: 12px;
+  color: #B0BDC8;
+  list-style: none;
+}
+
+.breadcrumb a {
+  @extend .breadcrumb;
+  
+  color: #B0BDC8;
+  text-decoration: none;
+}

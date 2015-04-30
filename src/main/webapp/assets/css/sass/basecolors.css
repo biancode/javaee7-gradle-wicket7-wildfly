@@ -1,0 +1,18 @@
+/* Basic Colors of Project */
+/* line 3, ../../../sass/basecolors.scss */
+.appcolor {
+  color: #E3E6E9;
+  background-color: #45515C;
+}
+
+/* line 8, ../../../sass/basecolors.scss */
+.pagecolor {
+  color: #45515C;
+  background-color: #92A1AD;
+}
+
+/* line 13, ../../../sass/basecolors.scss */
+.contentcolor {
+  color: #45515C;
+  background-color: #E3E6E9;
+}

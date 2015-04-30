@@ -1,0 +1,86 @@
+/* Basic CSS Formatter */
+
+.gbc-none-margin {
+  margin: 0;  
+}
+
+.gbc-auto-margin {
+  margin: 0 auto;  
+}
+
+.gbc-full-margin {
+  margin: 10px;  
+}
+
+.gbc-top-margin {
+  margin: 0;
+  margin-top: 10px;  
+}
+
+.gbc-topleft-margin {
+  margin: 0;
+  margin-top: 10px;  
+  margin-left: 10px;
+}
+
+.gbc-topright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.gbc-leftright-space {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+
+.gbc-topleftright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+
+
+.gbc-none-padding {
+  padding: 0;  
+}
+
+.gbc-auto-padding {
+  padding: 0 auto;  
+}
+
+.gbc-full-padding {
+  padding: 10px;  
+}
+
+.gbc-top-padding {
+  padding: 0;
+  padding-top: 10px;  
+}
+
+.gbc-topleft-padding {
+  padding: 0;
+  padding-top: 10px;  
+  padding-left: 10px;
+}
+
+.gbc-topright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.gbc-leftright-space {
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;  
+}
+
+.gbc-topleftright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;  
+}

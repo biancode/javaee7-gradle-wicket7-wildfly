@@ -1,0 +1,145 @@
+/*
+    Gradle Wicket 7 with Java EE 7 on Wildfly 8+ Quickstart Project
+
+    GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
+
+	http://bianco-royal.com/
+ */
+buildscript {
+  
+  repositories {
+    
+    maven {
+      name "Gradle Properties Repo"
+      url "${artifactsURL}${artifactsRepoKey}"
+    }
+    
+    mavenCentral()
+    
+  	maven { 
+  		name "Gradle Wildfly Plugin"
+  		url "http://dl.bintray.com/fwelland/FredsStuff" 
+  	}
+
+  	jcenter()
+  }
+
+  apply from: "${gradleApplyFromPath}/plugin-classpath.gradle", to: buildscript
+  apply from: "./classpath.gradle", to: buildscript
+}
+logger.debug('buildscript: settings activated')
+description = "Java EE 7 - Wildfly ${wildflyVersion} - Quickstarter"
+
+/*
+	Create a new configuration to bind own tasks in your project with.
+ */
+configurations.create("${name.replace("-", "")}")
+configurations.create("${name.toLowerCase().replace("-", "")}Runtime")
+logger.info("configuration added for jettyRun ${name.toLowerCase().replace("-", "")}Runtime")
+
+logger.info("Gradle project name: ${name}")
+logger.info("Encoding of <${group}.${name}> is ${encoding}")
+logger.info("Artifacts Repo: $project.artifactsURL$project.artifactsRepoKey")
+logger.info(description)
+
+logger.debug("Build mit project.gradleApplyFromPath: ${gradleApplyFromPath}")
+logger.debug("Konfiguration unter project.pluginConfigPath: ${pluginConfigPath}")
+
+// ###########################################################################
+/* 
+	you can do this a bit easier by a groovy list iterator, 
+	but so you can switch easily on and off your plugins to test
+ */	
+apply plugin: 'project-report'
+logger.info('Project Report Plugin activated')
+
+apply from: "${gradleApplyFromPath}/plugin-maven.gradle"
+repositories.each { logger.info("Repository $it.name") }
+
+/*
+	Groovy is the default and brings also Java aboard,
+	so you can write tests in Groovy 
+	and develop you main code as Java 8+
+ */	
+apply from: "${gradleApplyFromPath}/plugin-groovy.gradle"
+
+// JAVA COVERAGE
+apply from: "${gradleApplyFromPath}/plugin-jacoco.gradle"
+
+// JAVA QUALITY
+apply from: "${gradleApplyFromPath}/plugin-pmd.gradle"
+apply from: "${gradleApplyFromPath}/plugin-jdepend.gradle"
+apply from: "${gradleApplyFromPath}/plugin-findbugs.gradle"
+apply from: "${gradleApplyFromPath}/plugin-checkstyle.gradle"
+
+// GROOVY QUALITY
+apply from: "${gradleApplyFromPath}/plugin-codenarc.gradle"
+
+// JAVA EE 7 - APPLICATION SERVER AND CONTAINER TO TEST
+apply from: "${gradleApplyFromPath}/plugin-wildfly.gradle"
+apply from: "${gradleApplyFromPath}/plugin-jetty.gradle"
+
+// IDE
+apply from: "${gradleApplyFromPath}/plugin-eclipse.gradle"
+apply from: "${gradleApplyFromPath}/plugin-idea.gradle"
+
+// Wicket 
+apply from: "${gradleApplyFromPath}/plugin-wicket.gradle"
+
+// SASS
+apply from: "${gradleApplyFromPath}/plugin-compass.gradle"
+
+// ###########################################################################
+
+/*
+	Project dependencies - what is your favourite framework to use
+ */	
+dependencies {
+
+	// Faces JSF 2.2 could be used parallel as external links from Wicket
+  compile 'org.primefaces:primefaces:5.1'
+  compile 'org.primefaces.extensions:primefaces-extensions:3.0.0'
+		
+	// Tools
+	compile 'org.apache.commons:commons-csv:1.1'
+	compile "ro.isdc.wro4j:wro4j-core:${wro4jVersion}"
+	compile "ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}"
+	compile "ro.isdc.wro4j:wro4j-parent:${wro4jVersion}"
+	
+  // Exporter PDF, XML, ...
+  compile 'com.lowagie:itext:4.2.1'
+  compile 'org.apache.poi:poi:3.11'
+    
+	// JPA
+  providedCompile 'org.hibernate:hibernate-core:4.3.8.Final'
+
+	/*
+		none provided in wildfly/jboss - eclipselink - so you need this
+		Setup in wildfly see cli-commands.txt
+		you have also to add >> Dependencies: org.eclipse.persistence <<
+		to your MANIFEST.MF in >> src\main\webapp\META-INF << to use eclipselink
+	 */
+	// compile 'org.eclipse.persistence:eclipselink:2.5.2'
+	// compile 'org.eclipse.persistence:javax.persistence:2.1.0'
+	
+	// SQL Connector on MySQL
+	// compile 'mysql:mysql-connector-java:5.1.34'
+
+	// Testing - Spock includes JUnit, Unitils and some more to test easy with fun
+	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+
+}
+
+/*
+	The best way to use gradle in a long term project, 
+	is a wrapper of your favourite working gradle version
+	use it by command 'gradle wrapper' and after that 'gradlew clean build'
+ */
+task wrapper(type: Wrapper) {
+  gradleVersion = project.gradleVersion
+  
+  doFirst { println("Gradle Verison: $gradleVersion and URL: $distributionUrl") }
+
+  // if you use your own artifactory repo bring bins to gradle-dist and try this
+  distributionUrl = "${artifactsURL}gradle-dist/gradle-${gradleVersion}-bin.zip"
+}

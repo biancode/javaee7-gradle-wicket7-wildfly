@@ -1,0 +1,72 @@
+/* special Project Settings in CSS - Designed on 1024x768 */
+
+.programlogo {
+  position: absolute;
+  margin-top: -70px;
+  width: 146px;
+  height: 30px;
+  z-index: 9999;
+}
+
+.programlogo-right {
+  @extend .programlogo;
+  margin-left: 1024px - 300px;
+ 
+  @media (min-width: 300px) {
+    margin-left: 5px;
+  }
+   
+  @media (min-width: 768px) {
+    margin-left: 768px - 300px;
+  }
+  
+  @media (min-width: 960px) {
+    margin-left: 960px - 300px;
+  }
+    
+  @media (min-width: 1024px) {
+    margin-left: 1024px - 300px;
+  }
+  
+  @media (min-width: 1136px) and (orientation: landscape) {
+    margin-left: 1136px - 300px;
+  }
+  
+  @media (min-width: 1334px) and (orientation: landscape) {
+    margin-left: 1334px - 300px;
+  }
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    margin-top: -140px;
+    margin-left: 2048px - 300px;
+  }
+}
+
+.programlogo-right-deploy {
+  @extend .programlogo;
+  margin-left: 1024px - 150px;
+  
+  @media (min-width: 300px) {
+    margin-left: 5px;
+  }
+   
+  @media (min-width: 768px) {
+    margin-left: 768px - 150px;
+  }
+
+  @media (min-width: 960px) {
+    margin-left: 960px - 150px;
+  }
+    
+  @media (min-width: 1024px) {
+    margin-left: 1024px - 150px;
+  }
+  
+  @media (min-width: 1136px) and (orientation: landscape) {
+    margin-left: 1136px - 150px;
+  }
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    margin-left: 2048px - 150px;
+  }
+}

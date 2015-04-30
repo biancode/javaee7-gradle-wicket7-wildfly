@@ -1,0 +1,21 @@
+/* special Project Settings in CSS - Designed on 1024x768 */
+
+
+.programlogo {
+  position: absolute;
+  margin-top: -47px;
+  margin-left: 45px;
+  width: 146px;
+  height: 30px;
+  z-index: 9999;
+}
+
+.programlogo-right {
+  @extend .programlogo;
+  margin-top: 13px;
+  margin-left: 640px - 170px;
+}
+
+.programlogo-right-deploy {
+  @extend .programlogo-right;
+}

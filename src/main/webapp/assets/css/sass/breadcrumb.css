@@ -1,0 +1,12 @@
+/* line 3, ../../../sass/breadcrumb.scss */
+.breadcrumb, .breadcrumb a {
+  font-size: 12px;
+  color: #B0BDC8;
+  list-style: none;
+}
+
+/* line 9, ../../../sass/breadcrumb.scss */
+.breadcrumb a {
+  color: #B0BDC8;
+  text-decoration: none;
+}

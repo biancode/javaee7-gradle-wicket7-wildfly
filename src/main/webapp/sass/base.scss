@@ -1,0 +1,85 @@
+/* Basic Design on 1024x768  */
+@import 'reset';
+@import 'formatter';
+@import 'fonts';
+
+html {
+  font-family: OpenSans, Verdana, Geneva, sans-serif;
+  color: #000;
+  font-size: 0.8em;
+}
+
+body {
+  font: 100% OpenSans, Verdana, Geneva, sans-serif;
+  color: #000;
+    
+  padding-top: 70px;
+  padding-bottom: 10px;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    padding-top: 140px;
+    padding-bottom: 20px;
+  }
+}
+
+
+/* .box { @include border-radius(10px); } */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+
+.gbc-compact {
+  @extend .gbc-none-margin;
+  @extend .gbc-none-padding;
+}
+
+.appfooter {
+  @extend .gbc-none-margin;
+  @extend .gbc-none-padding;
+
+  margin-left: 25px;
+  font-size: 8px;
+}
+
+.wicketDebugBar {
+  top: 96%;
+  z-index: 9999;
+}
+
+#wicketDebugBar {
+  top: 708px;
+  z-index: 9999;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    top: 1470px;
+  }
+}
+
+#wicketDebugLink {
+  bottom: 32px;
+}

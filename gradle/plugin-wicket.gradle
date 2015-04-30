@@ -1,0 +1,50 @@
+/*
+  Apache Wicket Settings
+
+  GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
+
+  http://bianco-royal.com/
+ */
+
+
+logger.info("Wicket activated with version ${project.wicketVersion}")
+
+dependencies {
+  
+	// Wicket 7
+	compile "org.apache.wicket:wicket-core:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-extensions:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-auth-roles:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-datetime:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-devutils:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-cdi-1.1:${project.wicketVersion}"
+  compile "org.apache.wicket:wicket-bean-validation:${project.wicketVersion}"
+  compile 'org.apache.wicket:wicket-eclipse-settings:2'
+  compile 'org.slf4j:slf4j-api:1.7.12'
+  compile 'org.slf4j:slf4j-log4j12:1.7.12'
+	// ... get more here http://mvnrepository.com/artifact/org.apache.wicket
+	
+	// Wicket Stuff
+	compile "org.wicketstuff:wicketstuff-annotation:${project.wicketVersion}"
+  compile "org.wicketstuff:wicketstuff-minis:${project.wicketVersion}"
+  compile "org.wicketstuff:wicketstuff-select2:${project.wicketVersion}"
+  // compile "org.wicketstuff:wicketstuff-html5:${project.wicketVersion}"
+  // compile "org.wicketstuff:wicketstuff-jwicket-core:${project.wicketVersion}"
+  // compile "org.wicketstuff:wicketstuff-whiteboard:${project.wicketVersion}"
+  // compile "org.wicketstuff:wicketstuff-htmlcompressor:${project.wicketVersion}"
+  // compile 'org.springframework:spring-core:4.1.2.RELEASE'
+  // ... and you can get many many more here http://mvnrepository.com/artifact/org.wicketstuff
+
+	// Wicket Bootstrap 3
+	compile "de.agilecoders.wicket:wicket-bootstrap-core:${project.wicketBootstrapVersion}"
+  compile "de.agilecoders.wicket:wicket-bootstrap-extensions:${project.wicketBootstrapVersion}"
+  compile "de.agilecoders.wicket:wicket-bootstrap-themes:${project.wicketBootstrapVersion}"
+  compile "de.agilecoders.wicket:wicket-bootstrap-less:${project.wicketBootstrapVersion}"
+  compile 'de.agilecoders.wicket:jquery-selectors:0.2.0'
+	// ... get more here http://mvnrepository.com/artifact/de.agilecoders.wicket
+  
+  // Extras
+  compile 'net.ftlines.wicket-source:wicket-source:7.0.0'
+  compile 'com.newrelic.agent.java:newrelic-api:3.15.0'
+  compile 'ch.qos.logback:logback-classic:1.1.3'
+}

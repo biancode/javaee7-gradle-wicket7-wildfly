@@ -1,0 +1,233 @@
+/* Basic Design on 1024x768  */
+/* line 1, ../../../sass/reset.scss */
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+/* Basic CSS Formatter */
+/* line 3, ../../../sass/formatter.scss */
+.gbc-none-margin, .gbc-compact, .appfooter {
+  margin: 0;
+}
+
+/* line 7, ../../../sass/formatter.scss */
+.gbc-auto-margin {
+  margin: 0 auto;
+}
+
+/* line 11, ../../../sass/formatter.scss */
+.gbc-full-margin {
+  margin: 10px;
+}
+
+/* line 15, ../../../sass/formatter.scss */
+.gbc-top-margin {
+  margin: 0;
+  margin-top: 10px;
+}
+
+/* line 20, ../../../sass/formatter.scss */
+.gbc-topleft-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* line 26, ../../../sass/formatter.scss */
+.gbc-topright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* line 32, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 38, ../../../sass/formatter.scss */
+.gbc-topleftright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 46, ../../../sass/formatter.scss */
+.gbc-none-padding, .gbc-compact, .appfooter {
+  padding: 0;
+}
+
+/* line 50, ../../../sass/formatter.scss */
+.gbc-auto-padding {
+  padding: 0 auto;
+}
+
+/* line 54, ../../../sass/formatter.scss */
+.gbc-full-padding {
+  padding: 10px;
+}
+
+/* line 58, ../../../sass/formatter.scss */
+.gbc-top-padding {
+  padding: 0;
+  padding-top: 10px;
+}
+
+/* line 63, ../../../sass/formatter.scss */
+.gbc-topleft-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+/* line 69, ../../../sass/formatter.scss */
+.gbc-topright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+/* line 75, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 81, ../../../sass/formatter.scss */
+.gbc-topleftright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Basic Fonts OpenSans is like Segeo UI from Windows */
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'OpenSans SemiboldItalic';
+  src: url("../../fonts/open-sans/OpenSans-SemiboldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../../fonts/open-sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 900;
+}
+/* line 6, ../../../sass/basemobile.scss */
+html {
+  font-family: OpenSans, Verdana, Geneva, sans-serif;
+  color: #000;
+  font-size: 0.8em;
+}
+
+/* line 12, ../../../sass/basemobile.scss */
+body {
+  font: 100% OpenSans, Verdana, Geneva, sans-serif;
+  color: #000;
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+@media (min-height: 2048px) and (orientation: portrait) {
+  /* line 12, ../../../sass/basemobile.scss */
+  body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+}
+
+/* line 25, ../../../sass/basemobile.scss */
+.center {
+  text-align: center;
+}
+
+/* .box { @include border-radius(10px); } */
+/* line 38, ../../../sass/basemobile.scss */
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+/* line 44, ../../../sass/basemobile.scss */
+.success {
+  border-color: green;
+}
+
+/* line 49, ../../../sass/basemobile.scss */
+.error {
+  border-color: red;
+}
+
+/* line 54, ../../../sass/basemobile.scss */
+.warning {
+  border-color: yellow;
+}
+
+/* line 64, ../../../sass/basemobile.scss */
+.appfooter {
+  margin-left: 25px;
+  font-size: 8px;
+}
+
+/* line 72, ../../../sass/basemobile.scss */
+.wicketDebugBar {
+  top: 96%;
+  z-index: 9999;
+}
+
+/* line 77, ../../../sass/basemobile.scss */
+#wicketDebugBar {
+  top: 960px;
+  z-index: 9999;
+}
+@media (min-height: 2048px) and (orientation: portrait) {
+  /* line 77, ../../../sass/basemobile.scss */
+  #wicketDebugBar {
+    top: 1980px;
+  }
+}
+
+/* line 86, ../../../sass/basemobile.scss */
+#wicketDebugLink {
+  bottom: 32px;
+}
