@@ -1,0 +1,23 @@
+/*
+    Gradle Wicket 7 Java EE 7 - Wildfly 8+ - Quickstart Project
+
+    GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
+
+	http://bianco-royal.com/
+ */
+
+TODO: bring this to seperate Shell Scripts with verification like PowerShell Scripts
+##############################################################################
+
+# Remember to set your path to war file and wildfly binary
+
+$yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='deploy --force $yourPathToWar$/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
+
+$yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='undeploy --force javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
+
+
+
+# You have to reload somtimes ;)
+
+$yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='/:reload'
+

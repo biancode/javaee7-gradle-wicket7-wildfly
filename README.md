@@ -5,26 +5,26 @@ Gradle Wildfly EE Wicket 7 Quickstarter
 --------------
 
 *Wicket 7*
-- Java 7
+- Java 7 or 8
 - HTML5
 - CSS3
 - Wicket-Boostrap
 - Wicket-Stuff
-- with Examples included
+- with Examples as Showroom included
 
 *JPA 2.1*
-- hibernate
+- hibernate (default on JBoss/Wildfly)
 - eclipselink
 
-*SASS CSS*
-- compiling CSS
+*SASS CSS - Compass*
+- compiling and checking CSS
 - clean and reusable
 
 **Gradle Java EE 7 - Wildfly - Quickstart Project**
 
 *You need wildfly 8.2+ or 9.+ to use Java EE 7 Features out of the box*
 
-default wildfly: 9.0.0.Alpha1
+default wildfly: 9.0.0.Beta2
 
 - Java EE 7 Web Project
 - Wildfly 8.+ or Wildfly 9.+
@@ -67,12 +67,22 @@ You will find a Gradle View in your IDE to see all tasks.
 
 *should be all work without a local appserver on buildserver or host - by CLI*
 
-- Gradle Test should use a port-offset=10000
-- Gradle deployment tasks - see ./gradle/plugin.wildfly.gradle
+- Gradle Test should use a port-offset=20000
+- Gradle deployment tasks - see ./gradle/plugin-wildfly.gradle
 - Gradle server command tasks (restart, reload, start, stop)
 - Gradle CI build (Jenkins) to test
 
 	some code examples inside to test
+
+Wildfly
+--------------
+
+For now Wildfly have to be running on localhost with port-offset 10000.
+So please setup this as VM Argument: '-Djboss.socket.binding.port-offset=10000' 
+
+Tests on build will fail if your wildfly is not reachable or running.
+Take a look in folder scripts file unix-commands.txt on Mac and Linux/Unix 
+or use PowerShell Scripts on Windows.
 
 Database 
 --------------
