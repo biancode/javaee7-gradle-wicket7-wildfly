@@ -74,6 +74,13 @@ You will find a Gradle View in your IDE to see all tasks.
 
 	some code examples inside to test
 
+Database 
+--------------
+
+This project needs a SQL Database.
+You will find the commands for MySQL in folder scripts.
+
+
 CI - Jenkins
 --------------
 
@@ -96,6 +103,23 @@ IDE
 * Eclipse EE 4.4 - Gradle IDE Pack 3.6.x by Eclipse Marketplace
 * STS 3.6.3 - Gradle IDE Pack 3.6.x by Eclipse Marketplace
 * IntelliJ 14.1 - Gradle aboard
+
+If you get it right, you can take a look on
+
+*Wicket 7*
+
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/basecss
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/components
+
+*Primefaces*
+
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/securities.xhtml
+
+*JSF - Java EE 7*
+
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/start.xhtml
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/index.xhtml
 
 
 Links - Documentation used
