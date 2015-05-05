@@ -164,65 +164,56 @@ html {
 body {
   font: 100% OpenSans, Verdana, Geneva, sans-serif;
   color: #000;
-  padding-top: 70px;
-  padding-bottom: 10px;
-}
-@media (min-width: 2048px) and (orientation: landscape) {
-  /* line 12, ../../../sass/base.scss */
-  body {
-    padding-top: 140px;
-    padding-bottom: 20px;
-  }
 }
 
 /* .box { @include border-radius(10px); } */
-/* line 35, ../../../sass/base.scss */
+/* line 27, ../../../sass/base.scss */
 .message, .success, .error, .warning {
   border: 1px solid #ccc;
   padding: 10px;
   color: #333;
 }
 
-/* line 41, ../../../sass/base.scss */
+/* line 33, ../../../sass/base.scss */
 .success {
   border-color: green;
 }
 
-/* line 46, ../../../sass/base.scss */
+/* line 38, ../../../sass/base.scss */
 .error {
   border-color: red;
 }
 
-/* line 51, ../../../sass/base.scss */
+/* line 43, ../../../sass/base.scss */
 .warning {
   border-color: yellow;
 }
 
-/* line 61, ../../../sass/base.scss */
+/* line 53, ../../../sass/base.scss */
 .appfooter {
   margin-left: 25px;
   font-size: 8px;
 }
 
-/* line 69, ../../../sass/base.scss */
+/* line 61, ../../../sass/base.scss */
 .wicketDebugBar {
   top: 96%;
   z-index: 9999;
 }
 
-/* line 74, ../../../sass/base.scss */
+/* line 66, ../../../sass/base.scss */
 #wicketDebugBar {
   top: 708px;
   z-index: 9999;
 }
 @media (min-width: 2048px) and (orientation: landscape) {
-  /* line 74, ../../../sass/base.scss */
+  /* line 66, ../../../sass/base.scss */
   #wicketDebugBar {
     top: 1470px;
   }
 }
 
-/* line 83, ../../../sass/base.scss */
+/* line 75, ../../../sass/base.scss */
 #wicketDebugLink {
   bottom: 32px;
 }

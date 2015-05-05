@@ -1,0 +1,13 @@
+/* CSS Settings for Panels in Project  */
+
+.gbc-scrollable {
+  overflow: auto;
+  position: relative;
+}
+
+.gbc-list-scrollable {
+  @extend .gbc-scrollable;
+  
+  height: 270px;
+  max-height: 2000px;
+}

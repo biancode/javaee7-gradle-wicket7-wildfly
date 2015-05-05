@@ -1,6 +1,19 @@
+/*
+  Compass Settings
+
+  https://github.com/robfletcher/gradle-compass
+
+  BUILDSCRIPT-CLASSPATH-DEPENDENCY: 'com.github.robfletcher:compass-gradle-plugin:2.0.4'
+ 
+  GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
+
+  http://bianco-royal.com/
+ */
 apply plugin: 'com.github.robfletcher.compass'
 
 compass {
   cssDir = file("src/main/webapp/assets/css/sass")
   sassDir = file("src/main/webapp/sass")
 }
+
+war.dependsOn compassCompile

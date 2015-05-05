@@ -108,17 +108,20 @@ This project is configured for Jenkins and its Plugins to show
 IDE
 --------------
 
-*It's all tested on Windows 7 and Mac OS X 10.9*
+*It's all tested on Windows 7, 8 and 10 and Mac OS X 10.9*
 
 * Eclipse EE 4.4 - Gradle IDE Pack 3.6.x by Eclipse Marketplace
 * STS 3.6.3 - Gradle IDE Pack 3.6.x by Eclipse Marketplace
 * IntelliJ 14.1 - Gradle aboard
+* Mobile Version with JQuery Mobile 1.4 aboard
 
 If you get it right, you can take a look on
 
 *Wicket 7*
 
 * http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/mobile
+* http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/responsive
 * http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/basecss
 * http://localhost:18080/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT/components
 

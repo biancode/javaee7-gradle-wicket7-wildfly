@@ -1,0 +1,12 @@
+/* CSS Settings for Panels in Project  */
+/* line 3, ../../../sass/panel.scss */
+.gbc-scrollable, .gbc-list-scrollable {
+  overflow: auto;
+  position: relative;
+}
+
+/* line 8, ../../../sass/panel.scss */
+.gbc-list-scrollable {
+  height: 270px;
+  max-height: 2000px;
+}

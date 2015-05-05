@@ -2,23 +2,34 @@ package com.github.biancode.wicket;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.RuntimeConfigurationType;
+import org.apache.wicket.Session;
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.cdi.CdiConfiguration;
 import org.apache.wicket.core.util.file.WebApplicationPath;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderResponse;
+import org.apache.wicket.markup.html.IHeaderResponseDecorator;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 import org.apache.wicket.response.filter.AjaxServerAndClientTimeFilter;
 import org.apache.wicket.util.io.IOUtils;
 import org.apache.wicket.util.string.Strings;
 
+import com.github.biancode.wicket.desktop.pages.DesktopHomePage;
 import com.github.biancode.wicket.mobile.pages.MobileHomePage;
-import com.github.biancode.wicket.web.pages.DesktopHomePage;
+import com.github.biancode.wicket.responsive.pages.ResponsiveHomePage;
 
 import de.agilecoders.wicket.core.Bootstrap;
 import de.agilecoders.wicket.core.settings.BootstrapSettings;
@@ -38,160 +49,190 @@ import de.agilecoders.wicket.themes.markup.html.wicket.WicketTheme;
 
 /**
  * Application object for your web application.
- * If you want to run this application without deploying, run the Start class.
- * 
- * @see net.aokv.Start#main(String[])
  */
 public class WicketApplication extends WebApplication
 {
+	// TODO: may as ENUM
+	public static final List<Locale> LOCALES = Arrays.asList(Locale.US, Locale.ENGLISH, new Locale("nl", "NL"),
+			Locale.GERMAN, Locale.SIMPLIFIED_CHINESE, Locale.JAPANESE, new Locale("pt", "BR"), new Locale("fa", "IR"),
+			new Locale("da", "DK"), new Locale("th", "TH"), new Locale("ru"), new Locale("ko", "KR"));
 
-  private Properties properties = new Properties();
+	private Properties properties = new Properties();
 
-  public WicketApplication()
-  {
+	public WicketApplication()
+	{
 
-    super();
+		super();
 
-    loadProperties();
-    setConfigurationType(RuntimeConfigurationType.valueOf(properties.getProperty("configuration.type")));
-  }
+		loadProperties();
+		setConfigurationType(RuntimeConfigurationType.valueOf(properties.getProperty("configuration.type")));
+	}
 
-  @Override
-  public Class<? extends WebPage> getHomePage()
-  {
+	@Override
+	public Class<? extends WebPage> getHomePage()
+	{
 
-    return HomePage.class;
-  }
+		return DesktopHomePage.class;
+	}
 
-  @Override
-  public void init()
-  {
+	@Override
+	public void init()
+	{
 
-    super.init();
+		super.init();
 
-    getResourceSettings().getResourceFinders().add(new WebApplicationPath(getServletContext(), "assets"));
-    getResourceSettings().getResourceFinders().add(new WebApplicationPath(getServletContext(), "markup"));
+		getResourceSettings().getResourceFinders().add(new WebApplicationPath(getServletContext(), "assets"));
+		getResourceSettings().getResourceFinders().add(new WebApplicationPath(getServletContext(), "markup"));
 
-    // new AnnotatedMountScanner().scanPackage("net.aokv.mobile.pages").mount(this);
-    // new AnnotatedMountScanner().scanPackage("net.aokv.web.pages").mount(this);
-    // new AnnotatedMountScanner().scanPackage("de.agilecoders.wicket.samples.pages").mount(this);
+		// new
+		// AnnotatedMountScanner().scanPackage("net.aokv.mobile.pages").mount(this);
+		// new
+		// AnnotatedMountScanner().scanPackage("net.aokv.web.pages").mount(this);
+		// new
+		// AnnotatedMountScanner().scanPackage("de.agilecoders.wicket.samples.pages").mount(this);
 
-    configureSSLPortMapper();
-    configureWicketCdi();
-    configureAjax();
-    configureBootstrap();
+		setHeaderResponseDecorator(new IHeaderResponseDecorator()
+		{
+			@Override
+			public IHeaderResponse decorate(IHeaderResponse response)
+			{
+				// use this header resource decorator to load all JavaScript resources in the page
+				// footer (after </body>)
+				return new JavaScriptFilteredIntoFooterHeaderResponse(response, "footerJS");
+			}
+		});
+		
+		configureSSLPortMapper();
+		configureWicketCdi();
+		configureAjax();
+		configureBootstrap();
 
-    if (Strings.isTrue(properties.getProperty("cdn.useCdn")))
-    {
-      final String cdn = properties.getProperty("cdn.baseUrl");
-      StaticResourceRewriteMapper.withBaseUrl(cdn).install(this);
-    }
+		if (Strings.isTrue(properties.getProperty("cdn.useCdn")))
+		{
+			final String cdn = properties.getProperty("cdn.baseUrl");
+			StaticResourceRewriteMapper.withBaseUrl(cdn).install(this);
+		}
 
-    mountPages();
+		mountPages();
 
-    mountPackages();
-  }
+		mountPackages();
+	}
 
-  private void configureSSLPortMapper()
-  {
+	private void configureSSLPortMapper()
+	{
 
-    setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 443)));
-  }
+		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 443)));
+	}
 
-  private void configureWicketCdi()
-  {
+	private void configureWicketCdi()
+	{
 
-    new CdiConfiguration().configure(this);
-  }
+		new CdiConfiguration().configure(this);
+	}
 
-  private void configureAjax()
-  {
+	private void configureAjax()
+	{
 
-    getApplicationSettings().setUploadProgressUpdatesEnabled(true);
-    getRequestCycleSettings().addResponseFilter(new AjaxServerAndClientTimeFilter());
-    getDebugSettings().setAjaxDebugModeEnabled(true);
-  }
+		getApplicationSettings().setUploadProgressUpdatesEnabled(true);
+		getRequestCycleSettings().addResponseFilter(new AjaxServerAndClientTimeFilter());
+		getDebugSettings().setAjaxDebugModeEnabled(true);
+	}
 
-  private void mountPackages()
-  {
+	private void mountPackages()
+	{
 
-    // mountPackage("/versis", DesktopHomePage.class);
-    // mountPackage("/mversis", MobileHomePage.class);
-  }
+		// mountPackage("/desktop", DesktopHomePage.class);
+		// mountPackage("/mobile", MobileHomePage.class);
+	}
 
-  private void mountPages()
-  {
+	private void mountPages()
+	{
 
-    mountPage("/app", DesktopHomePage.class);
-    mountPage("/mobile", MobileHomePage.class);
-    mountPage("/basecss", BaseCssPage.class);
-    mountPage("/components", ComponentsPage.class);
-  }
+		mountPage("/desktop", DesktopHomePage.class);
+		mountPage("/mobile", MobileHomePage.class);
+		mountPage("/responsive", ResponsiveHomePage.class);
 
-  public static WicketApplication get()
-  {
+		mountPage("/basecss", BaseCssPage.class);
+		mountPage("/components", ComponentsPage.class);
+	}
 
-    return (WicketApplication) Application.get();
-  }
+	public static WicketApplication get()
+	{
 
-  private void configureBootstrap()
-  {
+		return (WicketApplication) Application.get();
+	}
 
-    final IBootstrapSettings settings = new BootstrapSettings();
-    final BootswatchThemeProvider themeProvider = new BootswatchThemeProvider(BootswatchTheme.Cerulean);
+	private void configureBootstrap()
+	{
 
-    Bootstrap.install(this, settings);
-    BootstrapLess.install(this);
+		final IBootstrapSettings settings = new BootstrapSettings();
+		final BootswatchThemeProvider themeProvider = new BootswatchThemeProvider(BootswatchTheme.Spacelab);
 
-    final ThemeProvider defaultThemeProvider = new DefaultThemeProvider()
-    {
+		Bootstrap.install(this, settings);
+		BootstrapLess.install(this);
 
-      {
-        add(new MetroTheme());
-        add(new GoogleTheme());
-        add(new WicketTheme());
+		final ThemeProvider defaultThemeProvider = new DefaultThemeProvider()
+		{
 
-        for (ITheme theme : themeProvider.available())
-        {
-          if (!theme.name().equals("Amelia")) // Amelia theme has errors
-          {
-            add(theme);
-          }
-        }
+			{
+				add(new MetroTheme());
+				add(new GoogleTheme());
+				add(new WicketTheme());
 
-        // defaultTheme(new GoogleTheme());
-        defaultTheme(BootswatchTheme.Spacelab);
-      }
+				for (ITheme theme : themeProvider.available())
+				{
+					if (!theme.name().equals("Amelia")) // Amelia theme has
+					// errors
+					{
+						add(theme);
+					}
+				}
 
-    };
+				// defaultTheme(new GoogleTheme());
+				defaultTheme(BootswatchTheme.Spacelab);
+			}
 
-    settings.setThemeProvider(defaultThemeProvider);
-  }
+		};
 
-  public Properties getProperties()
-  {
+		settings.setThemeProvider(defaultThemeProvider);
+	}
 
-    return properties;
-  }
+	@Override
+	public Session newSession(Request request, Response response)
+	{
+		WebSession session = new WebSession(request);
+		Locale locale = session.getLocale();
+		if (!LOCALES.contains(locale))
+		{
+			session.setLocale(Locale.US);
+		}
+		return session;
+	}
 
-  private void loadProperties()
-  {
+	public Properties getProperties()
+	{
 
-    try
-    {
-      InputStream stream = getClass().getResourceAsStream("/config.properties");
-      try
-      {
-        properties.load(stream);
-      }
-      finally
-      {
-        IOUtils.closeQuietly(stream);
-      }
-    }
-    catch (IOException e)
-    {
-      throw new WicketRuntimeException(e);
-    }
-  }
+		return properties;
+	}
+
+	private void loadProperties()
+	{
+
+		try
+		{
+			InputStream stream = getClass().getResourceAsStream("/config.properties");
+			try
+			{
+				properties.load(stream);
+			}
+			finally
+			{
+				IOUtils.closeQuietly(stream);
+			}
+		}
+		catch (IOException e)
+		{
+			throw new WicketRuntimeException(e);
+		}
+	}
 }

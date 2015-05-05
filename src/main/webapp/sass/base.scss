@@ -12,14 +12,6 @@ html {
 body {
   font: 100% OpenSans, Verdana, Geneva, sans-serif;
   color: #000;
-    
-  padding-top: 70px;
-  padding-bottom: 10px;
-  
-  @media (min-width: 2048px) and (orientation: landscape) {
-    padding-top: 140px;
-    padding-bottom: 20px;
-  }
 }
 
 

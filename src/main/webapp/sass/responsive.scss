@@ -1,0 +1,126 @@
+/* Responsive Design Basics - Designed on 1024x768 */
+@import 'formatter';
+@import 'basecolors';
+@import 'panel';
+@import 'breadcrumb';
+
+/* min design for 1024x768 iPad Size */
+
+body {
+  @extend .appcolor;
+}
+
+.fullsizedWith {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.boxedWith {
+  min-width: 90%;
+  max-width: 98%;
+}
+
+
+.centeredtext {
+  text-align: center;
+}
+
+.projectname {
+  margin-top: 20px;
+  padding: 25px;
+  font-size: 1.6em;
+  color: #327CB5;
+}
+
+.homelink {
+  @extend .gbc-auto-margin;
+}
+
+.appcolumn {
+  margin-top: 90px;
+  margin-bottom: 80px;
+  text-align: center;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    margin-top: 280px;
+    margin-bottom: 0;
+    min-height: 800px;
+    max-height: 800px;    
+  }
+}
+
+.appbackground {
+  @extend .appcolor;
+  @extend .fullsizedWith;
+    
+  margin-top: 75px;
+    
+  min-height: 680px;
+  max-height: 680px;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    min-height: 1350px;
+    max-height: 1350px;
+  }
+}
+
+.pagebackground {
+  @extend .pagecolor;
+  @extend .fullsizedWith;
+  
+  margin-top: -22px;
+
+  min-height: 600px;
+  max-height: 600px;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    min-height: 1250px;
+    max-height: 1250px;
+  }
+}
+
+.contentbackground {
+  @extend .contentcolor;
+  @extend .boxedWith;
+  
+  margin: 35px;
+
+  border: 6px;
+  border-style: solid;
+  border-color: white;
+
+  min-height: 520px;
+  max-height: 520px;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    min-height: 1150px;
+    max-height: 1150px;
+  }
+}
+
+.rd-site-name {
+  @extend .centeredtext;
+  
+  margin-top: -38px;
+  font-size: 24px;
+}
+
+.treeview {
+  @extend .gbc-topleft-margin;
+  @extend .gbc-full-padding;
+  @extend .contentcolor;
+  
+  min-height: 490px;
+  max-width: 200px;
+
+  border-color: #45515C;
+  border-style: solid;
+  border-width: medium;
+  
+  @media (min-width: 2048px) and (orientation: landscape) {
+    min-height: 490px;
+    max-width: 300px;
+  }  
+}
+
+

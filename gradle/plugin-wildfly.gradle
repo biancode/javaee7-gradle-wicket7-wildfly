@@ -17,6 +17,21 @@ apply plugin: 'war'
 
 logger.info("Wildfly Plugin activated with version ${project.wildflyVersion}")
 
+war {
+
+	from('src/main/java') {
+        include '**/*.properties'
+        into 'WEB-INF/classes'
+    }
+    
+	webInf {
+        from('src/META-INF') {
+            include 'persistence.xml'
+            into('classes/META-INF/')
+        }
+    }
+}
+
 dependencies {
   
   // search for modules: http://mvnrepository.com/artifact/org.wildfly

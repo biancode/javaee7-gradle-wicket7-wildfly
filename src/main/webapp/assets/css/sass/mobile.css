@@ -1,0 +1,271 @@
+/* special Project Settings in CSS - Designed on 1024x768 */
+/* Basic CSS Formatter */
+/* line 3, ../../../sass/formatter.scss */
+.gbc-none-margin {
+  margin: 0;
+}
+
+/* line 7, ../../../sass/formatter.scss */
+.gbc-auto-margin, .homelink {
+  margin: 0 auto;
+}
+
+/* line 11, ../../../sass/formatter.scss */
+.gbc-full-margin {
+  margin: 10px;
+}
+
+/* line 15, ../../../sass/formatter.scss */
+.gbc-top-margin {
+  margin: 0;
+  margin-top: 10px;
+}
+
+/* line 20, ../../../sass/formatter.scss */
+.gbc-topleft-margin, .treeview {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* line 26, ../../../sass/formatter.scss */
+.gbc-topright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* line 32, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 38, ../../../sass/formatter.scss */
+.gbc-topleftright-margin {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 46, ../../../sass/formatter.scss */
+.gbc-none-padding {
+  padding: 0;
+}
+
+/* line 50, ../../../sass/formatter.scss */
+.gbc-auto-padding {
+  padding: 0 auto;
+}
+
+/* line 54, ../../../sass/formatter.scss */
+.gbc-full-padding, .treeview {
+  padding: 10px;
+}
+
+/* line 58, ../../../sass/formatter.scss */
+.gbc-top-padding {
+  padding: 0;
+  padding-top: 10px;
+}
+
+/* line 63, ../../../sass/formatter.scss */
+.gbc-topleft-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+/* line 69, ../../../sass/formatter.scss */
+.gbc-topright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+/* line 75, ../../../sass/formatter.scss */
+.gbc-leftright-space {
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 81, ../../../sass/formatter.scss */
+.gbc-topleftright-padding {
+  padding: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Basic Colors of Project */
+/* line 3, ../../../sass/basecolors.scss */
+.appcolor, body, .appbackground {
+  color: #E3E6E9;
+  background-color: #45515C;
+}
+
+/* line 8, ../../../sass/basecolors.scss */
+.pagecolor, .pagebackground {
+  color: #45515C;
+  background-color: #92A1AD;
+}
+
+/* line 13, ../../../sass/basecolors.scss */
+.contentcolor, .contentbackground, .treeview {
+  color: #45515C;
+  background-color: #E3E6E9;
+}
+
+/* CSS Settings for Panels in Project  */
+/* line 3, ../../../sass/panel.scss */
+.gbc-scrollable, .gbc-list-scrollable {
+  overflow: auto;
+  position: relative;
+}
+
+/* line 8, ../../../sass/panel.scss */
+.gbc-list-scrollable {
+  height: 270px;
+  max-height: 2000px;
+}
+
+/* line 3, ../../../sass/breadcrumb.scss */
+.breadcrumb, .breadcrumb a {
+  font-size: 12px;
+  color: #B0BDC8;
+  list-style: none;
+}
+
+/* line 9, ../../../sass/breadcrumb.scss */
+.breadcrumb a {
+  color: #B0BDC8;
+  text-decoration: none;
+}
+
+/* min design for 1024x768 iPad Size */
+/* line 13, ../../../sass/mobile.scss */
+.fullsizedWith, .appbackground, .pagebackground {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/* line 18, ../../../sass/mobile.scss */
+.boxedWith, .contentbackground {
+  min-width: 90%;
+  max-width: 98%;
+}
+
+/* line 24, ../../../sass/mobile.scss */
+.centeredtext, .rd-site-name {
+  text-align: center;
+}
+
+/* line 28, ../../../sass/mobile.scss */
+.projectname {
+  margin-top: 20px;
+  padding: 25px;
+  font-size: 1.6em;
+  color: #327CB5;
+}
+
+/* line 39, ../../../sass/mobile.scss */
+.appcolumn {
+  margin-top: 90px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 39, ../../../sass/mobile.scss */
+  .appcolumn {
+    margin-top: 280px;
+    margin-bottom: 0;
+    min-height: 800px;
+    max-height: 800px;
+  }
+}
+
+/* line 52, ../../../sass/mobile.scss */
+.appbackground {
+  margin-top: 85px;
+  min-height: 680px;
+  max-height: 680px;
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 52, ../../../sass/mobile.scss */
+  .appbackground {
+    min-height: 1350px;
+    max-height: 1350px;
+  }
+}
+
+/* line 67, ../../../sass/mobile.scss */
+.pagebackground {
+  margin-top: 20px;
+  min-height: 600px;
+  max-height: 600px;
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 67, ../../../sass/mobile.scss */
+  .pagebackground {
+    min-height: 1250px;
+    max-height: 1250px;
+  }
+}
+
+/* line 82, ../../../sass/mobile.scss */
+.contentbackground {
+  margin: 35px;
+  border: 6px;
+  border-style: solid;
+  border-color: white;
+  min-height: 520px;
+  max-height: 520px;
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 82, ../../../sass/mobile.scss */
+  .contentbackground {
+    min-height: 1150px;
+    max-height: 1150px;
+  }
+}
+
+/* line 101, ../../../sass/mobile.scss */
+.rd-site-name {
+  margin-top: -38px;
+  font-size: 24px;
+}
+
+/* line 108, ../../../sass/mobile.scss */
+.treeview {
+  min-height: 490px;
+  max-width: 200px;
+  border-color: #45515C;
+  border-style: solid;
+  border-width: medium;
+}
+@media (min-width: 2048px) and (orientation: landscape) {
+  /* line 108, ../../../sass/mobile.scss */
+  .treeview {
+    min-height: 490px;
+    max-width: 300px;
+  }
+}
+
+/* line 129, ../../../sass/mobile.scss */
+.programlogo, .programlogo-right, .programlogo-right-deploy {
+  position: absolute;
+  margin-top: -47px;
+  margin-left: 45px;
+  width: 146px;
+  height: 30px;
+  z-index: 9999;
+}
+
+/* line 138, ../../../sass/mobile.scss */
+.programlogo-right, .programlogo-right-deploy {
+  margin-top: 13px;
+  margin-left: 470px;
+}
