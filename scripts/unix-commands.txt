@@ -1,5 +1,5 @@
 /*
-    Gradle Wicket 7 Java EE 7 - Wildfly 8+ - Quickstart Project
+    Gradle Wicket 7 Java EE 7 - Wildfly 9+ - Quickstart Project
 
     GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
 
@@ -9,6 +9,8 @@
 TODO: bring this to seperate Shell Scripts with verification like PowerShell Scripts
 ##############################################################################
 
+# develop server port-offset=10000 on my system 
+
 # Remember to set your path to war file and wildfly binary
 
 $yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='deploy --force $yourPathToWar$/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
@@ -16,11 +18,11 @@ $yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --
 $yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='undeploy --force javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
 
 Example:
-~/appserver/wildfly-9.0.0.Beta2/bin/jboss-cli.sh --controller=localhost:19990 --connect --command='deploy --force build/libs/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
+~/appserver/wildfly-9.0.1.Final/bin/jboss-cli.sh --controller=localhost:19990 --connect --command='deploy --force build/libs/javaee7-gradle-wicket7-wildfly-1.0.0-SNAPSHOT.war'
 
-# You have to reload somtimes ;)
+# You have to reload sometimes ;)
 
 $yourPathToWildflyBinary$/jboss-cli.sh --controller=localhost:19990 --connect --command='/:reload'
 
 Example:
-~/appserver/wildfly-9.0.0.Beta2/bin/jboss-cli.sh --controller=localhost:19990 --connect --command='/:reload'
+~/appserver/wildfly-9.0.1.Final/bin/jboss-cli.sh --controller=localhost:19990 --connect --command='/:reload'

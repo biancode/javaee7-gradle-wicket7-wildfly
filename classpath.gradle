@@ -10,8 +10,8 @@
 logger.debug('Project classpath Settings loading')
 
 dependencies {
-    classpath 'org.codehaus.groovy:groovy-all:2.4.3'
-		classpath 'org.primefaces:primefaces:5.1'
+    classpath 'org.codehaus.groovy:groovy-all:2.4.4'
+		classpath 'org.primefaces:primefaces:5.2'
     classpath 'de.agilecoders.wicket.webjars:wicket-webjars:0.5.0'
     classpath 'com.github.robfletcher:compass-gradle-plugin:2.0.4'
 }

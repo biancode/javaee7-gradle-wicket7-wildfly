@@ -15,8 +15,7 @@ $ipaddress="localhost"
 $port="19990"
 
 # $wildflyVersion="8.2.0.Final"
-# $wildflyVersion="9.0.0.Alpha1"
-$wildflyVersion="9.0.0.Beta2"
+$wildflyVersion="9.0.1.Final"
 $wildflyServer = "D:\appserver\wildfly\wildfly-" + $wildflyVersion
 
 $warPath = "D:\github\javaee7-gradle-wicket7-wildfly" + $githubBranch + "\build\libs"

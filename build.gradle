@@ -1,5 +1,5 @@
 /*
-    Gradle Wicket 7 with Java EE 7 on Wildfly 8+ Quickstart Project
+    Gradle Wicket 7 with Java EE 7 on Wildfly 9+ Quickstart Project
 
     GNU GPLv3 Copyright by Klaus Landsdorf - Lohne (Olb) - Germany
 
@@ -9,12 +9,12 @@ buildscript {
   
   repositories {
     
-    maven {
-      name "Gradle Properties Repo"
-      url "${artifactsURL}${artifactsRepoKey}"
-    }
-    
-    mavenCentral()
+  	mavenCentral()
+
+	maven { 
+		name "Gradle Properties Repo"
+	        url "${project.artifactsURL}${project.artifactsRepoKey}"
+	}
     
   	maven { 
   		name "Gradle Wildfly Plugin"
@@ -97,8 +97,8 @@ apply from: "${gradleApplyFromPath}/plugin-compass.gradle"
 dependencies {
 
 	// Faces JSF 2.2 could be used parallel as external links from Wicket
-  compile 'org.primefaces:primefaces:5.1'
-  compile 'org.primefaces.extensions:primefaces-extensions:3.0.0'
+  compile 'org.primefaces:primefaces:5.2'
+  compile 'org.primefaces.extensions:primefaces-extensions:3.2.0'
 		
 	// Tools
 	compile 'org.apache.commons:commons-csv:1.1'
@@ -111,7 +111,7 @@ dependencies {
   compile 'org.apache.poi:poi:3.11'
     
 	// JPA
-  providedCompile 'org.hibernate:hibernate-core:4.3.8.Final'
+  providedCompile 'org.hibernate:hibernate-core:5.0.1.Final'
 
 	/*
 		none provided in wildfly/jboss - eclipselink - so you need this
